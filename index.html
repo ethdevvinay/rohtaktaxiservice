@@ -523,16 +523,6 @@
     }
   }
 </style>
-<sript>
-	// JavaScript animation
-    const h1 = document.querySelector('h1');
-    h1.addEventListener('mouseover', () => {
-      h1.style.animationPlayState = 'paused';
-    });
-    h1.addEventListener('mouseout', () => {
-      h1.style.animationPlayState = 'running';
-    });
-</sript>
   </div>
     <div class="pattern-bg" style="background-image: url(assets/images/shapes/pattern.png)"></div>
     <!-- /.pattern-bg -->
@@ -1546,6 +1536,15 @@
 			document.querySelector('.contact-one__form__form').reset();
 		});
 	</script>
+<sript>
+    const h1 = document.querySelector('h1');
+    h1.addEventListener('mouseover', () => {
+      h1.style.animationPlayState = 'paused';
+    });
+    h1.addEventListener('mouseout', () => {
+      h1.style.animationPlayState = 'running';
+    });
+</sript>
 </body>
 
 </html>
