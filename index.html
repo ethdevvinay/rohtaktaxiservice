@@ -505,8 +505,34 @@
       <img src="assets/images/shapes/about-shape-1-3.png" alt="shape" class="about-one__shape" />
     </section>
     <!-- /.about-one section-space -->
-	<div style="text-align: center;">
-    <h1>Premier Transport Solutions: Reliable and Affordable Taxi Service in Rohtak</h1>
+    <div style="text-align: center; color: #333;">
+    <h1 class="animated">Premier Transport Solutions: Reliable and Affordable Taxi Service in Rohtak</h1>
+<style>
+  .animated {
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+</style>
+<sript>
+	// JavaScript animation
+    const h1 = document.querySelector('h1');
+    h1.addEventListener('mouseover', () => {
+      h1.style.animationPlayState = 'paused';
+    });
+    h1.addEventListener('mouseout', () => {
+      h1.style.animationPlayState = 'running';
+    });
+</sript>
   </div>
     <div class="pattern-bg" style="background-image: url(assets/images/shapes/pattern.png)"></div>
     <!-- /.pattern-bg -->
