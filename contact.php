@@ -235,7 +235,7 @@
 									<div class="contact-one__sidebar__info__image">
 										<img src="assets/images/resources/contact-info-1-1.jpg" alt="contact">
 									</div><!-- /.contact-one__sidebar__info__image -->
-									<address class="contact-one__sidebar__info__address">Rohtak, Haryana, India - 124001
+									<address class="contact-one__sidebar__info__address">2277,Housing Board,Near Mahendra Model School, Sector 3 (P), Rohtak, Haryana 124001
 									</address><!-- /.contact-one__sidebar__info__address -->
 									<ul class="contact-one__sidebar__info__list list-unstyled">
 										<li>
@@ -338,7 +338,7 @@
 								data-wow-delay="300ms">
 								<div class="footer-widget footer-widget--contact">
 									<h2 class="footer-widget__title">office address</h2><!-- /.footer-widget__title -->
-									<address class="footer-widget__address">Rohtak, Haryana, India - 124001</address>
+									<address class="footer-widget__address">2277,Housing Board,Near Mahendra Model School, Sector 3 (P), Rohtak, Haryana 124001</address>
 									<ul class="list-unstyled footer-widget__info">
 										<li>
 											<span class="footer-widget__info__icon">
@@ -458,7 +458,7 @@
 						<span class="sidebar-one__info__icon sidebar-one__info__icon--location">
 							<i class="icon-maps-and-flags"></i>
 						</span>
-						<address>Rohtak, Haryana, India - 124001</address>
+						<address>2277,Housing Board,Near Mahendra Model School, Sector 3 (P), Rohtak, Haryana 124001</address>
 					</li>
 					<li>
 						<span class="sidebar-one__info__icon">

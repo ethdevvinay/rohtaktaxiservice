@@ -76,7 +76,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </li>
             <li>
               <span class="topbar__info__icon topbar__info__icon--location"><i class="icon-maps-and-flags"></i></span>
-              <a href="https://www.google.com/maps/@28.8983898,76.635206">Rohtak, Haryana, India - 124001</a>
+              <a href="https://www.google.com/maps/@28.8983898,76.635206">2277,Housing Board,Near Mahendra Model School, Sector 3 (P), Rohtak, Haryana 124001</a>
             </li>
             <li>
               <span class="topbar__info__icon topbar__info__icon--location"><i class="icon-telephone-call"></i></span>
@@ -1465,7 +1465,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="sidebar-one__info__icon sidebar-one__info__icon--location">
               <i class="icon-maps-and-flags"></i>
             </span>
-            <address>Rohtak, Haryana, India - 124001</address>
+            <address>2277,Housing Board,Near Mahendra Model School, Sector 3 (P), Rohtak, Haryana 124001</address>
           </li>
           <li>
             <span class="sidebar-one__info__icon">
