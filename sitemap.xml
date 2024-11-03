@@ -1,13 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-  <loc>https://rohtaktaxiservice.co.in/</loc>
-  <lastmod>2024-10-25T19:51:35+00:00</lastmod>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap-image/1.1 
+                            http://www.sitemaps.org/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/index.html</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/about.html</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/contact.html</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/services.html</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/privacy-policy.html</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/terms.html</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/robots.txt</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/sitemap.xml</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/images/rohtak-taxi-service.png</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/images/rohtak-taxi-service.svg</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://rohtaktaxiservice.co.in/images/rohtak-taxi-service-(500-x-500-px).svg</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
