@@ -1,0 +1,15 @@
+# Configuring the manifest in your site
+
+1. Upload all files to root of your website
+
+2. Copy following lines of code to your <head> tag
+
+
+<link rel="manifest" href="manifest.json"></link>
+
+<script type="text/javascript" src="manup.js"></script>
+<script type="text/javascript" src="pwabuilder-sw-new.js"></script>
+<script type="text/javascript" src="pwabuilder-sw-register-new.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
+<script type="text/javascript" src="pwa-custom.js"></script>

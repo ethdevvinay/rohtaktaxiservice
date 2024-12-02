@@ -1,0 +1,362 @@
+
+  <style media="screen">
+    .pwa-logo {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .pwa-overlay {
+      height: 100%;
+      width: 0px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(192,192,192, 0.8);
+      overflow-x: hidden;
+      transition: 0.5s;
+      text-align: center;
+    }
+    
+    .btnAdd{
+        border-radius:0px;
+    }
+    
+    .ios_pointing{
+        margin-top:100px;
+    }
+
+    .pwa-overlay-content {
+      position: relative;
+      top: 15%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .pwa-overlay-content-when-null-deferred {
+      display: none;
+    }
+
+    .pwa-overlay-content-when-ios {
+      display: none;
+    }
+
+    .pwa-overlay-content-when-deferred {
+      display: none;
+    }
+
+    .pwa-overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .pwa-overlay a {
+        font-size: 20px;
+        color: #fff;
+      }
+
+      .pwa-overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
+    }
+       .cookieConsentContainer {
+        z-index: 999;
+        width: 350px;
+        min-height: 20px;
+        box-sizing: border-box;
+        padding: 30px 30px 30px 30px;
+        background: #232323;
+        overflow: hidden;
+        position: fixed;
+          bottom: 30px;
+        right: 30px;
+        display: none;
+      }
+      .cookieConsentContainer .cookieTitle a {
+        font-family: OpenSans, arial, "sans-serif";
+        color: #FFFFFF;
+        font-size: 22px;
+        line-height: 20px;
+        display: block;
+      }
+      .cookieConsentContainer .cookieDesc p {
+        margin: 0;
+        padding: 0;
+        font-family: OpenSans, arial, "sans-serif";
+        color: #FFFFFF;
+        font-size: 13px;
+        line-height: 20px;
+        display: block;
+        margin-top: 10px;
+      } .cookieConsentContainer .cookieDesc a {
+        font-family: OpenSans, arial, "sans-serif";
+        color: #FFFFFF;
+        text-decoration: underline;
+      }
+      .cookieConsentContainer .cookieButton a {
+        display: inline-block;
+        font-family: OpenSans, arial, "sans-serif";
+        color: #FFFFFF;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 14px;
+        background: #000000;
+        box-sizing: border-box; 
+        padding: 15px 24px;
+        text-align: center;
+        transition: background 0.3s;
+      }
+      .cookieConsentContainer .cookieButton a:hover { 
+        cursor: pointer;
+        background: #3E9B67;
+      }
+
+      @media (max-width: 980px) {
+        .cookieConsentContainer {
+          bottom: 0px !important;
+          left: 0px !important;
+          width: 100%  !important;
+        }
+      }
+  </style>
+  <script type="text/javascript">
+    // --- Config --- //
+var purecookieTitle = "Cookies."; // Title
+var purecookieDesc = "This website uses cookies to ensure you get the best experience on our website."; // Description
+var purecookieLink = '<a href="https://app.sonik.live/userprivacy.html" target="_blank">Learn More</a>'; // Cookiepolicy link
+var purecookieButton = "I Agree"; // Button text
+// ---        --- //
+
+
+function pureFadeIn(elem, display){
+  var el = document.getElementById(elem);
+  el.style.opacity = 0;
+  el.style.display = display || "block";
+
+  (function fade() {
+    var val = parseFloat(el.style.opacity);
+    if (!((val += .02) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+};
+function pureFadeOut(elem){
+  var el = document.getElementById(elem);
+  el.style.opacity = 1;
+
+  (function fade() {
+    if ((el.style.opacity -= .02) < 0) {
+      el.style.display = "none";
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+};
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {   
+    document.cookie = name+'=; Max-Age=-99999999;';  
+}
+
+function cookieConsent() {
+  if (!getCookie('purecookieDismiss')) {
+    document.body.innerHTML += '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' + purecookieTitle + '</a></div><div class="cookieDesc"><p>' + purecookieDesc + ' ' + purecookieLink + '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' + purecookieButton + '</a></div></div>';
+  pureFadeIn("cookieConsentContainer");
+  }
+}
+
+function purecookieDismiss() {
+  setCookie('purecookieDismiss','1',7);
+  pureFadeOut("cookieConsentContainer");
+}
+
+window.onload = function() { cookieConsent(); };
+  </script>
+  <script type="text/javascript">
+
+  function closeNav() {
+    $('#myNav').hide();
+  }
+  var isMobile = {
+    Android: function() {
+      return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+      return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+      return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+      return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+  };
+
+
+
+  var deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+  });
+
+  function installApp() {
+    // hide our user interface that shows our A2HS button
+    //$('.btnAdd').style.display = 'none';
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice
+      .then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          setCookie("pwa_installed_new", "1", 30);
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      });
+  }
+
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function showOverlay() {
+
+    if (!window.matchMedia('(display-mode: standalone)').matches) {
+      if (isMobile.any()) {
+        //show black overlay
+        if (isMobile.iOS() && getCookie("pwa_installed_new") == "") {
+          $('#myNav').fadeIn(500);
+          $('#myNav').css("width", "100%");
+          $('.pwa-overlay-content-when-ios').show();
+          //if ios but cookie not set
+        } else if (deferredPrompt != null) {
+          $('#myNav').fadeIn(500);
+          $('#myNav').css("width", "100%");
+          $('.pwa-overlay-content-when-deferred').show();
+          //if ios but cookie not set
+
+        } else if (getCookie("pwa_installed_new") == "") {
+          $('#myNav').fadeIn(500);
+          $('#myNav').css("width", "100%");
+          $('.pwa-overlay-content-when-null-deferred').show();
+          //if ios but cookie not set        }
+        }
+      }
+    }
+
+  }
+  setTimeout(showOverlay, 2000);
+
+
+  </script>
+
+
+
+  
+
+
+  
+
+
+
+  
+
+</head>
+
+<body>
+    <div id="myNav" class="pwa-overlay" style="z-index:99999;">
+              <a href="javascript:void(0)" style="color:#000;" class="closebtn" onclick="closeNav()">×</a>
+               <div class="pwa-overlay-content pwa-overlay-content-when-deferred">
+                 <h4 style="color:#000; font-size:24px; font-weight:bold;">Install Our App Now!</h4>
+                 <img src="https://successguru.xyz/webicons/rocket.svg" style="width:30px; height:30px" alt="Responsive image"><span style="color:#000">  Fast loading</span><br>
+                 <img src="https://successguru.xyz/webicons/bell.svg" style="width:30px; height:30px" alt="Responsive image"><span style="color:#000"> Offer Notification</span><br>
+                 
+                 <span style="color:#000; margin-top:50px; display:inline-block; font-size: 24px;">Just Click Add to Home</span><br>
+                 <br>
+                 
+               </div>
+               <div class="pwa-overlay-content pwa-overlay-content-when-null-deferred">
+                 <h4 style="color:#000; font-size:24px; font-weight:bold;">Install Our App Now!</h4>
+                 <img src="https://successguru.xyz/webicons/rocket.svg" style="width:30px; height:30px" alt="Responsive image"><span style="color:#000">  Fast loading</span><br>
+                 <img src="https://successguru.xyz/webicons/bell.svg" style="width:30px; height:30px" alt="Responsive image"><span style="color:#000"> Offer Notification</span><br>
+                 
+                 <span style="color:#000; margin-top:50px; display:inline-block; font-size: 24px;">Just Click </span><br><span style="color:#fff">& Select
+"Add to Home Screen"</span>
+
+               </div>
+               <div class="pwa-overlay-content pwa-overlay-content-when-ios">
+                 <h4 style="color:#000; font-size:24px; font-weight:bold;">Install Our App Now!</h4>
+                 <img src="https://successguru.xyz/webicons/rocket.svg" style="width:30px; height:30px" alt="Responsive image"><span style="color:#000">  Fast loading</span><br>
+                 <img src="https://successguru.xyz/webicons/bell.svg" style="width:30px; height:30px" alt="Responsive image"><span style="color:#000"> Offer Notification</span><br>
+                 
+                 <br>
+                 <span style="color:#000; margin-top:50px; display:inline-block; font-size: 24px;">Just Click </span><br><span style="color:#fff"> & Select
+"Add to Home Screen"</span>
+               </div>
+               
+               <h3 class="text-center ios_pointing" style="font-size:14px;">"On iOS Just tap <img src="https://successguru.xyz/webicons/ios.svg" style="width:30px; height:30px" alt="Responsive image"> and click on add to homescreen"</h3>
+               <button id="addtohome" type="button" class="btn btn-danger btnAdd" onclick="installApp()">Add to Home</button>
+              </div>
+    </div>
+  </div>
+
+
+
+  
